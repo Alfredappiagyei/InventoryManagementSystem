@@ -15,6 +15,7 @@ package inventory;
  
 import java.sql.ResultSetMetaData;
 import java.awt.event.KeyEvent;
+import java.awt.print.PrinterException;
 import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -29,7 +30,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 
  
 
@@ -603,8 +603,23 @@ public class IssuedGoods extends javax.swing.JFrame {
     
     
     
+    public void print()
+    {
+    String sub = txtsub.getText();
+    String pay = txtpay.getText();
+    String bal = txtbalance.getText();
     
-     
+    
+    
+        try {
+            new print(sub,pay,bal,jTable1.getModel()).setVisible(true);
+        } catch (PrinterException ex) {
+            Logger.getLogger(IssuedGoods.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
+    
+   
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -615,7 +630,7 @@ public class IssuedGoods extends javax.swing.JFrame {
         int balance = pay - subtotal;
         
         txtbalance.setText(String.valueOf(balance));
-        
+         print();
          issues();
         
     }//GEN-LAST:event_jButton2ActionPerformed
