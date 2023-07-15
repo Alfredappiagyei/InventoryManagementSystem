@@ -125,6 +125,11 @@ public class IssuedGoods extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Issued Goods");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -489,7 +494,11 @@ public class IssuedGoods extends javax.swing.JFrame {
         this.dispose();
         v.setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
-
+private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {                                     
+        // TODO add your handling code here:
+  
+      
+    }  
     private void txtpayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpayActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtpayActionPerformed
@@ -689,6 +698,13 @@ public class IssuedGoods extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+         IssuedGoods i = new IssuedGoods();
+        this.hide();
+        i.setVisible(true);
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
